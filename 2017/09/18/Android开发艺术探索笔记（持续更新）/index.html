@@ -16,7 +16,7 @@
 <meta property="og:description" content="Android开发艺术探索读书笔记，仅适用本人！！！">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5051594-dc0899a6f81b7eee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-09-18T03:45:00.915Z">
+<meta property="og:updated_time" content="2017-11-13T10:56:15.951Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android开发艺术探索笔记（持续更新）">
 <meta name="twitter:description" content="Android开发艺术探索读书笔记，仅适用本人！！！">
@@ -175,6 +175,12 @@
         <p><img src="http://upload-images.jianshu.io/upload_images/5051594-dc0899a6f81b7eee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="android开发艺术探索笔记.png"></p>
 <p>Android开发艺术探索读书笔记，仅适用本人！！！<a id="more"></a></p>
 <h1 id="1-1-Activity的生命周期"><a href="#1-1-Activity的生命周期" class="headerlink" title="1.1 :Activity的生命周期"></a>1.1 :Activity的生命周期</h1><p>1.onCreate-&gt;onStart-&gt;onResume-&gt;Activity运行-&gt;onPause-&gt;onStop-&gt;onDestory-&gt;Activity销毁。<br>onStart（）：Activity已经可见，但是没有出现在前台，用户无法交互。可理解为：已经显示出来了，但是我们看不到。<br>2.onCreate(Bundle saveInstanceState)中的参数正常启动Activity是为空的，只有异常情况才会不为空。<br>举两个例子：<br>    第一个：横竖屏切换，这个会重走生命周期，属于异常启动，这个时候系统会调用onSaveInstanceState()方法来保存这个activity的状态或者数据，这个时候onCreate（）方法中的参数不为空，同时可以调用onRestoreInstanceState()方法来回复Activity的状态和数据。<br>    第二个：资源内存不足导致优先级低的Activity被杀死。<br>        Activity 优先级由高到低排列：<br>        (1):前台Activity<br>        (2):可见但非前台——Activity弹出dialog的情况。<br>        (3):被暂停的Activity，执行了onStop。<br>        这种情况和横竖屏切换情况一样。</p>
+<hr>
+<h1 id="1-2-1-Activity-启动模式-2017年11月13号更新"><a href="#1-2-1-Activity-启动模式-2017年11月13号更新" class="headerlink" title="1.2.1:Activity 启动模式 |2017年11月13号更新"></a>1.2.1:Activity 启动模式 |2017年11月13号更新</h1><p><strong>任务栈是一种后进先出的栈结构</strong></p>
+<p><strong>1.standard:标准模式；系统默认模式。</strong><br>特点：不管实例是否存在，都会创建一个新的实例。</p>
+<p><strong>2.singleTop :栈顶复用模式。</strong><br>特点：如果新Activity已经位于栈顶，则不会重新创建，同时调用onNewIntent（）方法，否则被创建。</p>
+<p><strong>3.singleTask：栈内复用模式。</strong><br>特点：这是一种单实例模式，只要栈中有当前activity实例，就不会重新创建，直接调用onNewIntent()方法，否则，创建栈，再创建实例放入栈中。</p>
+<p><strong>4.singleInstance：单实例模式。</strong><br>特点：是一种加强的singleTask模式，该模式的实例只能单独存在一个栈中。比如：当一个activity设置为singleInstance模式，启动的时候第一次会开辟一个新的任务栈，然后将实例放入栈中，下次请求就是singleTask模式了，除非栈被销毁。</p>
 
       
 

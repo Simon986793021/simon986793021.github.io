@@ -8,13 +8,19 @@
   <link rel="dns-prefetch" href="https://simon986793021.github.io">
   <title>Simon的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="body {   width: 45em;   border: 1px solid #ddd;   outline: 1300px solid #fff;   margin: 16px auto; }  body .markdown-body {   padding: 30px; }  @font-face {   font-family: fontawesome-mini;   src: url">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Simon的博客">
-<meta property="og:url" content="https://simon986793021.github.io/index.html">
+<meta property="og:url" content="https://simon986793021.github.io/2017/11/13/Android开发艺术探索笔记（持续更新）/index.html">
 <meta property="og:site_name" content="Simon的博客">
+<meta property="og:description" content="body {   width: 45em;   border: 1px solid #ddd;   outline: 1300px solid #fff;   margin: 16px auto; }  body .markdown-body {   padding: 30px; }  @font-face {   font-family: fontawesome-mini;   src: url">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5051594-dc0899a6f81b7eee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-11-13T07:50:01.626Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Simon的博客">
+<meta name="twitter:description" content="body {   width: 45em;   border: 1px solid #ddd;   outline: 1300px solid #fff;   margin: 16px auto; }  body .markdown-body {   padding: 30px; }  @font-face {   font-family: fontawesome-mini;   src: url">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/5051594-dc0899a6f81b7eee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Simon的博客" type="application/atom+xml">
   
@@ -146,71 +152,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-杭州游记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/13/杭州游记/">杭州游记</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/13/杭州游记/" class="archive-article-date">
-  	<time datetime="2017-11-13T10:56:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/13/杭州游记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Android开发艺术探索笔记（持续更新）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Android开发艺术探索笔记（持续更新）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
@@ -1237,12 +1179,51 @@ date: 2017-09-18 11:18:33<br>
 tags:</p>
 <hr>
 <p><img alt="android开发艺术探索笔记.png" src="http://upload-images.jianshu.io/upload_images/5051594-dc0899a6f81b7eee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
-<p>Android开发艺术探索读书笔记，仅适用本人！！！
-        
-          <a class="article-more-a" href="/2017/11/13/Android开发艺术探索笔记（持续更新）/#more">more >></a>
-        
+<p>Android开发艺术探索读书笔记，仅适用本人！！！<a id="more"></a></p>
+<h1 id="11-activity"><a name="user-content-11-activity" href="#11-activity" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.1 :Activity的生命周期</h1>
+<p>1.onCreate-&gt;onStart-&gt;onResume-&gt;Activity运行-&gt;onPause-&gt;onStop-&gt;onDestory-&gt;Activity销毁。<br>
+onStart（）：Activity已经可见，但是没有出现在前台，用户无法交互。可理解为：已经显示出来了，但是我们看不到。<br>
+2.onCreate(Bundle saveInstanceState)中的参数正常启动Activity是为空的，只有异常情况才会不为空。<br>
+举两个例子：<br>
+    第一个：横竖屏切换，这个会重走生命周期，属于异常启动，这个时候系统会调用onSaveInstanceState()方法来保存这个activity的状态或者数据，这个时候onCreate（）方法中的参数不为空，同时可以调用onRestoreInstanceState()方法来回复Activity的状态和数据。<br>
+    第二个：资源内存不足导致优先级低的Activity被杀死。<br>
+        Activity 优先级由高到低排列：<br>
+        (1):前台Activity<br>
+        (2):可见但非前台——Activity弹出dialog的情况。<br>
+        (3):被暂停的Activity，执行了onStop。<br>
+        这种情况和横竖屏切换情况一样。</p>
+<hr>
+<h1 id="121activity-20171113"><a name="user-content-121activity-20171113" href="#121activity-20171113" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>1.2.1:Activity 启动模式 |2017年11月13号更新</h1>
+<p><strong>任务栈是一种后进先出的栈结构</strong></p>
+<p><strong>1.standard:标准模式；系统默认模式。</strong><br>
+特点：不管实例是否存在，都会创建一个新的实例。</p>
+<p><strong>2.singleTop :栈顶复用模式。</strong><br>
+特点：如果新Activity已经位于栈顶，则不会重新创建，同时调用onNewIntent（）方法，否则被创建。</p>
+<p><strong>3.singleTask：栈内复用模式。</strong><br>
+特点：</p></article></body></html>
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -1251,16 +1232,84 @@ tags:</p>
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/13/Android开发艺术探索笔记（持续更新）/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://simon986793021.github.io/2017/11/13/Android开发艺术探索笔记（持续更新）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/11/13/杭州游记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          杭州游记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/11/07/《人类简史》笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">《人类简史》笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -1280,542 +1329,12 @@ tags:</p>
 
 
 
-
-  
-    <article id="post-《人类简史》笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/07/《人类简史》笔记/">《人类简史》笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/07/《人类简史》笔记/" class="archive-article-date">
-  	<time datetime="2017-11-07T01:05:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="http://upload-images.jianshu.io/upload_images/5051594-0266483492d54996.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="人类简史.png"></p>
-<p>《人类简史》读书笔记开始记录啦！！！！！
-        
-          <a class="article-more-a" href="/2017/11/07/《人类简史》笔记/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/07/《人类简史》笔记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-《解忧杂货店》笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/31/《解忧杂货店》笔记/">2017/10/31《解忧杂货店》</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/31/《解忧杂货店》笔记/" class="archive-article-date">
-  	<time datetime="2017-10-31T02:42:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="http://upload-images.jianshu.io/upload_images/5051594-1e25767f61ec5649.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="解忧杂货店"></p>
-<p>这是我计划中的第一本书《解忧杂货店》，每日笔记都会写在这里面。
-        
-          <a class="article-more-a" href="/2017/10/31/《解忧杂货店》笔记/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/31/《解忧杂货店》笔记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-弃游从文，从现在开始" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/31/弃游从文，从现在开始/">弃游从文，从现在开始</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/31/弃游从文，从现在开始/" class="archive-article-date">
-  	<time datetime="2017-10-31T01:42:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="http://upload-images.jianshu.io/upload_images/5051594-b4922bdba767247c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="弃游从文，从现在开始"></p>
-<p>S7赛季已经接近尾声了，一直追随着的脚步也该停下来了。最重要的是现在英雄联盟环境太差了，很多时候已经找不到游戏的乐趣了，于是乎，确定弃游从文。
-        
-          <a class="article-more-a" href="/2017/10/31/弃游从文，从现在开始/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/31/弃游从文，从现在开始/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2017年9月21号日记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/21/2017年9月21号日记/">2017年9月21号日记</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/21/2017年9月21号日记/" class="archive-article-date">
-  	<time datetime="2017-09-21T14:27:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="http://upload-images.jianshu.io/upload_images/5051594-2bacdad710d3d609.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2017年9月21号日记"></p>
-<p>自己一直笃定的事情到头来却发现是自己的问题。总是想当然的和自己无关，总是忽略自己的责任
-        
-          <a class="article-more-a" href="/2017/09/21/2017年9月21号日记/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/21/2017年9月21号日记/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Android开发艺术探索笔记（持续更新）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/18/Android开发艺术探索笔记（持续更新）/">Android开发艺术探索笔记（持续更新）</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/18/Android开发艺术探索笔记（持续更新）/" class="archive-article-date">
-  	<time datetime="2017-09-18T03:18:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="http://upload-images.jianshu.io/upload_images/5051594-dc0899a6f81b7eee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="android开发艺术探索笔记.png"></p>
-<p>Android开发艺术探索读书笔记，仅适用本人！！！
-        
-          <a class="article-more-a" href="/2017/09/18/Android开发艺术探索笔记（持续更新）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/18/Android开发艺术探索笔记（持续更新）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-关于字符编码的那些事" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/28/关于字符编码的那些事/">关于字符编码的那些事</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/28/关于字符编码的那些事/" class="archive-article-date">
-  	<time datetime="2017-08-28T01:27:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="http://upload-images.jianshu.io/upload_images/5051594-7e9d14dea610f65a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="关于编码的那些事"><br>很久很久以前，有一群人，他们决定用8个可以开合的晶体管来组合成不同的状态，以表示世界上的万物。他们看到8个开关状态是好的，于是他们把这称为”字节”。</p>
-<p>再后来，他们又做了一些可以处理这些字节的机器，机器开动了，可以用字节来组合出很多状态，状态开始变来变去。他们看到这样是好的，于是它们就这机器称为”计算机”。
-        
-          <a class="article-more-a" href="/2017/08/28/关于字符编码的那些事/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/28/关于字符编码的那些事/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-30-tips-for-Android-developer" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/24/30-tips-for-Android-developer/">30-tips-for-Android-developer</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/24/30-tips-for-Android-developer/" class="archive-article-date">
-  	<time datetime="2017-08-24T11:51:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="http://img.blog.csdn.net/20170824194814055?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvU2ltb25fQ3J5c3Rpbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
-<p>Becoming an Android developer is easy, but becoming a successful Android developer and standing out from the rest is not. It takes a lot of hard work, passion, dedication, and perseverance to become great at this job.</p>
-<p>I can’t show you any shortcuts, but if you are willing to put in the effort, you will surely get all the success you deserve.</p>
-<p>To aid you on your quest to become a better Android developer, I compiled some bite-size pro tips from my experience. So whether you have just decided to jump into Android development or have been working as an Android developer for a while now, these tips will be relevant to you.
-        
-          <a class="article-more-a" href="/2017/08/24/30-tips-for-Android-developer/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/24/30-tips-for-Android-developer/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Safe-Call" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/09/Safe-Call/">或许这个demo让你了解Android四大组件</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/09/Safe-Call/" class="archive-article-date">
-  	<time datetime="2017-08-09T07:23:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="http://upload-images.jianshu.io/upload_images/5051594-31f2544963f53ece.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="welcome.png"></p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>粉丝：按照国际惯例，这里需要放的是一个效果展示的gif啊？<br>很有原则的我：效果展示，恩？不存在的！（我会告诉你我手机没有sim卡）<br>粉丝：那我要退订？<br>很有原则的我：退订，恩哼，威胁我，没用的。今天说什么我都不会做效果展示的。<br>粉丝：此生不再相见，粉转黑。<br>很有原则我的：恩，再见。（我们高冷的气质必须保持）<br>告一段落。<br>
-        
-          <a class="article-more-a" href="/2017/08/09/Safe-Call/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/09/Safe-Call/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -1838,8 +1357,8 @@ tags:</p>
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
