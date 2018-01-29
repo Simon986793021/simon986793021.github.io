@@ -16,7 +16,7 @@
 <meta property="og:description" content="Android开发艺术探索读书笔记，仅适用本人！！！">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5051594-dc0899a6f81b7eee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-01-11T07:09:51.730Z">
+<meta property="og:updated_time" content="2018-01-18T08:01:57.735Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android开发艺术探索笔记（持续更新）">
 <meta name="twitter:description" content="Android开发艺术探索读书笔记，仅适用本人！！！">
@@ -181,8 +181,9 @@
 <p><strong>2.singleTop :栈顶复用模式。</strong><br>特点：如果新Activity已经位于栈顶，则不会重新创建，同时调用onNewIntent（）方法，否则被创建。</p>
 <p><strong>3.singleTask：栈内复用模式。</strong><br>特点：这是一种单实例模式，只要栈中有当前activity实例，就不会重新创建，直接调用onNewIntent()方法，否则，创建栈，再创建实例放入栈中。</p>
 <p><strong>4.singleInstance：单实例模式。</strong><br>特点：是一种加强的singleTask模式，该模式的实例只能单独存在一个栈中。比如：当一个activity设置为singleInstance模式，启动的时候第一次会开辟一个新的任务栈，然后将实例放入栈中，下次请求就是singleTask模式了，除非栈被销毁。</p>
-<h1 id="eclipse快捷键-2018年1月11号更新"><a href="#eclipse快捷键-2018年1月11号更新" class="headerlink" title="eclipse快捷键 |2018年1月11号更新"></a>eclipse快捷键 |2018年1月11号更新</h1><p>查看哪些子类重写了父类的方法快捷键</p>
-<p>选中父类方法，CTRL+Shift+H</p>
+<h1 id="11-2-Android中的线程形态"><a href="#11-2-Android中的线程形态" class="headerlink" title="11.2 Android中的线程形态"></a>11.2 Android中的线程形态</h1><h2 id="11-2-1-AsyncTask"><a href="#11-2-1-AsyncTask" class="headerlink" title="11.2.1 AsyncTask"></a>11.2.1 AsyncTask</h2><p><strong>AsyncTask：</strong><br>onPreExecute()<br>doInBackground()<br>onPregressUpdate()<br>onPostExecute()</p>
+<h2 id="11-2-3-HandlerThread"><a href="#11-2-3-HandlerThread" class="headerlink" title="11.2.3 HandlerThread"></a>11.2.3 HandlerThread</h2><p>HandlerThread 继承自Thread，是一种可以使用Handler的Thread。就是在run()方法中开启一个loop（）循环。<br>IntentService使用了HandlerThread。</p>
+<h2 id="11-2-4-IntentService"><a href="#11-2-4-IntentService" class="headerlink" title="11.2.4 IntentService"></a>11.2.4 IntentService</h2><p>是一种特殊的Service，继承自Service，是一个抽象类，由于是四大组件之一，所以优先级很高，适合执行一些优先级高的后台服务。IntentService第一次启动是调用onCreate方法，这个时候会创建一个HandlerThread。</p>
 
       
 
